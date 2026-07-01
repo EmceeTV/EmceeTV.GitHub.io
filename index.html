@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmceeTV — Hip-Hop Culture, Uncut</title>
+  <meta name="description" content="EmceeTV is a hip-hop podcast built on raw conversation, real culture, and the artists shaping the sound. Watch the latest episodes." />
+
+  <!-- Fonts: Anton for impact display, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="EmceeTV home">
+        <!-- Primary logo asset, referenced verbatim per brief -->
+        <img src="emceetv-logo-5a.jpg" alt="EmceeTV graffiti logo" class="brand-logo" width="150" height="100" />
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#top" class="active">Home</a></li>
+          <li><a href="#episodes">Episodes</a></li>
+          <li><a href="#photos">Photos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="social-cluster" aria-label="Social links">
+        <a class="social-btn" href="https://www.youtube.com/channel/UCbkiiNUurUSb37QyD-nYZIw" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        </a>
+        <a class="social-btn" href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Spotify">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.75.75 0 0 1-1 .25c-2.8-1.7-6.3-2.1-10.4-1.1a.75.75 0 1 1-.34-1.46c4.5-1 8.4-.6 11.5 1.3.36.22.47.69.24 1.02zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.2-2-8.1-2.54-11.9-1.4a.94.94 0 1 1-.54-1.8c4.3-1.3 9.7-.7 13.4 1.6.44.27.58.85.33 1.29zm.13-3.4C15.4 8.31 8.9 8.08 5.2 9.2a1.12 1.12 0 1 1-.65-2.15c4.24-1.28 11.4-1 15.9 1.66a1.12 1.12 0 1 1-1.15 1.93z"/></svg>
+        </a>
+        <a class="social-btn" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.17.42.37 1.06.42 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.17-1.06.37-2.23.42-1.27.06-1.65.07-4.9.07s-3.63 0-4.9-.07c-1.17-.05-1.8-.25-2.23-.42-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.17-.42-.37-1.06-.42-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.17 1.06-.37 2.23-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5 0-4.75.07-.9.04-1.38.19-1.7.32-.43.16-.73.36-1.05.68-.32.32-.52.62-.68 1.05-.13.32-.28.8-.32 1.7C3.43 8.5 3.42 8.85 3.42 12s0 3.5.07 4.75c.04.9.19 1.38.32 1.7.16.43.36.73.68 1.05.32.32.62.52 1.05.68.32.13.8.28 1.7.32 1.25.07 1.6.07 4.75.07s3.5 0 4.75-.07c.9-.04 1.38-.19 1.7-.32.43-.16.73-.36 1.05-.68.32-.32.52-.62.68-1.05.13-.32.28-.8.32-1.7.07-1.25.07-1.6.07-4.75s0-3.5-.07-4.75c-.04-.9-.19-1.38-.32-1.7a2.8 2.8 0 0 0-.68-1.05 2.8 2.8 0 0 0-1.05-.68c-.32-.13-.8-.28-1.7-.32C15.5 4 15.15 4 12 4zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28zm5.15-2.98a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-noise" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <p class="hero-eyebrow">The hip-hop podcast · Season 3 now rolling</p>
+        <img src="emceetv-logo-5a.png" alt="EmceeTV" class="hero-logo" width="900" height="600" />
+        <h1 id="hero-heading" class="hero-tagline">
+          Raw conversations.<br /><span class="accent-text">Real culture.</span>
+        </h1>
+        <p class="hero-sub">
+          Bars, beats, and the stories behind them. EmceeTV sits down with the
+          artists, producers, and voices moving the culture forward — no filter,
+          all heart.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="https://www.youtube.com/channel/UCbkiiNUurUSb37QyD-nYZIw" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Latest Episode
+          </a>
+          <a class="btn btn-ghost" href="#episodes">Browse the vault</a>
+        </div>
+      </div>
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ EPISODES / YT FEED ============ -->
+    <section class="section episodes" id="episodes" aria-labelledby="ep-heading">
+      <div class="section-head">
+        <span class="section-tag">On the mic</span>
+        <h2 id="ep-heading" class="section-title">Latest <span class="accent-text">Episodes</span></h2>
+        <p class="section-lead">Fresh drops straight from the channel. New conversations every week.</p>
+      </div>
+
+      <!-- JS injects cards here; static fallback lives in app.js -->
+      <div class="episode-grid" id="episodeGrid" aria-live="polite">
+        <!-- Skeleton placeholders shown while loading -->
+        <div class="ep-card skeleton" aria-hidden="true"><div class="ep-thumb"></div><div class="ep-body"><div class="sk-line"></div><div class="sk-line short"></div></div></div>
+        <div class="ep-card skeleton" aria-hidden="true"><div class="ep-thumb"></div><div class="ep-body"><div class="sk-line"></div><div class="sk-line short"></div></div></div>
+        <div class="ep-card skeleton" aria-hidden="true"><div class="ep-thumb"></div><div class="ep-body"><div class="sk-line"></div><div class="sk-line short"></div></div></div>
+      </div>
+
+      <div class="section-foot">
+        <a class="btn btn-ghost" href="https://www.youtube.com/channel/UCbkiiNUurUSb37QyD-nYZIw" target="_blank" rel="noopener">See all episodes on YouTube</a>
+      </div>
+    </section>
+
+    <!-- ============ PHOTOS ============ -->
+    <section class="section photos" id="photos" aria-labelledby="ph-heading">
+      <div class="section-head">
+        <span class="section-tag">In the room</span>
+        <h2 id="ph-heading" class="section-title">Photo <span class="accent-text">Gallery</span></h2>
+        <p class="section-lead">Studio sessions, live sets, and the moments between takes.</p>
+      </div>
+
+      <div class="photo-grid" id="photoGrid">
+        <!-- Photos injected by app.js so the lightbox stays in sync -->
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="ct-heading">
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <span class="section-tag">Get at us</span>
+          <h2 id="ct-heading" class="section-title">Book. Pitch.<br /><span class="accent-text">Collaborate.</span></h2>
+          <p class="contact-copy">
+            Got an artist we should sit down with? Want EmceeTV at your event, or
+            looking to partner up? Drop a line — we read everything.
+          </p>
+
+          <ul class="contact-details">
+            <li>
+              <span class="cd-label">Booking &amp; press</span>
+              <a href="mailto:booking@emceetv.com">booking@emceetv.com</a>
+            </li>
+            <li>
+              <span class="cd-label">General</span>
+              <a href="mailto:hello@emceetv.com">hello@emceetv.com</a>
+            </li>
+            <li>
+              <span class="cd-label">Based in</span>
+              <span>Atlanta, GA — recording worldwide</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="you@email.com" />
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required placeholder="What's this about?" />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us more…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send message</button>
+            <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <div>
+        <h3 class="footer-cta-title">Don't miss a drop</h3>
+        <p class="footer-cta-sub">New episodes every week. Hit subscribe and turn on the bell.</p>
+      </div>
+      <a class="btn btn-primary" href="https://www.youtube.com/channel/UCbkiiNUurUSb37QyD-nYZIw?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+        Subscribe on YouTube
+      </a>
+    </div>
+
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="emceetv-logo-5a.jpg" alt="EmceeTV" class="footer-logo" width="130" height="87" />
+        <p class="footer-tag">Hip-hop culture, uncut.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#top">Home</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/channel/UCbkiiNUurUSb37QyD-nYZIw" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+        <a href="https://open.spotify.com" target="_blank" rel="noopener" aria-label="Spotify">Spotify</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>&copy; <span id="year"></span> EmceeTV. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">&#10094;</button>
+    <figure class="lb-figure">
+      <img class="lb-img" id="lbImg" src="" alt="" />
+      <figcaption class="lb-caption" id="lbCaption"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next photo">&#10095;</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
