@@ -70,7 +70,7 @@ jobs:
           else
             git add videos.json
             git commit -m "chore: refresh YouTube feed [skip ci]"
-            git pull --rebase
+            git pull --rebase --autostash
             git push
             echo "videos.json updated and pushed."
           fi
