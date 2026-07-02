@@ -82,15 +82,12 @@ const FALLBACK_EPISODES = [
    GALLERY PHOTOS
    ------------------------------------------------------------------- */
 const PHOTOS = [
-  { src: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=900&q=75&auto=format&fit=crop", cap: "Live set, downtown" },
-  { src: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=900&q=75&auto=format&fit=crop", cap: "Crowd, front row" },
-  { src: "https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=900&q=75&auto=format&fit=crop", cap: "In the booth" },
-  { src: "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=900&q=75&auto=format&fit=crop", cap: "Backstage" },
-  { src: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=900&q=75&auto=format&fit=crop", cap: "Studio session" },
-  { src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=75&auto=format&fit=crop", cap: "The cypher" },
-  { src: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900&q=75&auto=format&fit=crop", cap: "On the mic" },
-  { src: "https://images.unsplash.com/photo-1508973379184-7517410fb0bc?w=900&q=75&auto=format&fit=crop", cap: "Turntables" },
-  { src: "https://images.unsplash.com/photo-1471478331149-c72f17e33c73?w=900&q=75&auto=format&fit=crop", cap: "Sound check" }
+  { src: "images/1.jpg", cap: "Eminem Kanrocksas 2010" },
+  { src: "images/2.jpg", cap: "Ice Cube Harrahs" },
+  { src: "images/3.jpg", cap: "Snoop Kansas City 2012" },
+  { src: "images/4.jpg", cap: "Eminem and Denaun Kanrocksas 2010" },
+  { src: "images/5.jpg", cap: "Ghostface Iowa City" },
+  { src: "images/6.jpg", cap: "King ISO 2025 Des Moines" }
 ];
 
 /* ===================================================================
