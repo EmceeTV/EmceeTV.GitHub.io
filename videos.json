@@ -1,43 +1,49 @@
 {
-  "updated": "2026-07-02T21:38:50.496Z",
-  "source": "rss",
+  "updated": "2026-07-02T22:01:02.457Z",
+  "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
     {
       "title": "EmceeTV The Podcast Ep 265",
-      "date": "2026-07-01T10:46:29+00:00",
+      "date": "2026-07-01T10:46:29Z",
       "videoId": "je0GGi-XPzM",
-      "thumb": "https://i.ytimg.com/vi/je0GGi-XPzM/maxresdefault.jpg"
+      "thumb": "https://i.ytimg.com/vi/je0GGi-XPzM/sddefault.jpg",
+      "durationSeconds": 3919
     },
     {
       "title": "EmceeTV The Podcast Episode 264",
-      "date": "2026-06-24T08:20:26+00:00",
+      "date": "2026-06-24T08:20:26Z",
       "videoId": "GSSJa6AkMvM",
-      "thumb": "https://i.ytimg.com/vi/GSSJa6AkMvM/maxresdefault.jpg"
+      "thumb": "https://i.ytimg.com/vi/GSSJa6AkMvM/sddefault.jpg",
+      "durationSeconds": 4042
     },
     {
       "title": "EmceeTV The Podcast Episode 45 Kemyst",
-      "date": "2026-06-23T19:58:38+00:00",
+      "date": "2026-06-23T19:58:38Z",
       "videoId": "i3YJVfFb--o",
-      "thumb": "https://i.ytimg.com/vi/i3YJVfFb--o/maxresdefault.jpg"
-    },
-    {
-      "title": "DZ EmceeTVs Biggest Guest & Epic West Coast Tycoon!",
-      "date": "2026-06-23T14:33:26+00:00",
-      "videoId": "kSqywsrU2GI",
-      "thumb": "https://i.ytimg.com/vi/kSqywsrU2GI/maxresdefault.jpg"
-    },
-    {
-      "title": "What’s Going on in the NBA?? #emceetv #nba #timberwolves",
-      "date": "2026-06-23T14:33:15+00:00",
-      "videoId": "SeIJ8ADjUqg",
-      "thumb": "https://i.ytimg.com/vi/SeIJ8ADjUqg/maxresdefault.jpg"
+      "thumb": "https://i.ytimg.com/vi/i3YJVfFb--o/maxresdefault_live.jpg",
+      "durationSeconds": 0
     },
     {
       "title": "EmceeTV The Podcast Ep 263 The DBl Feature",
-      "date": "2026-06-17T10:32:33+00:00",
+      "date": "2026-06-17T10:32:33Z",
       "videoId": "m1_TnxIxzGk",
-      "thumb": "https://i.ytimg.com/vi/m1_TnxIxzGk/maxresdefault.jpg"
+      "thumb": "https://i.ytimg.com/vi/m1_TnxIxzGk/sddefault.jpg",
+      "durationSeconds": 3470
+    },
+    {
+      "title": "Hip-Hop , Live Music Reviews, and Major NBA Finals EmceeTV The Podcast Ep 262",
+      "date": "2026-06-15T05:42:58Z",
+      "videoId": "8FJtuZ_rclk",
+      "thumb": "https://i.ytimg.com/vi/8FJtuZ_rclk/sddefault.jpg",
+      "durationSeconds": 3840
+    },
+    {
+      "title": "DZ Talks New Music & Hip-Hop Legends on EmceeTV Ep 261",
+      "date": "2026-06-12T17:14:23Z",
+      "videoId": "SGaK3mRgP5M",
+      "thumb": "https://i.ytimg.com/vi/SGaK3mRgP5M/maxresdefault.jpg",
+      "durationSeconds": 5148
     }
   ]
 }
