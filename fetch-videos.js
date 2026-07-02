@@ -3,17 +3,26 @@
    fetch-videos.js — EmceeTV
    -------------------------------------------------------------------
    Runs on GitHub's servers (via GitHub Actions), NOT in the browser.
-   It reads YouTube's free public RSS feed for the channel — no API key,
-   no Google Cloud project, no quota — and writes the latest videos to
-   videos.json, which the website reads.
+   Writes the latest REAL EPISODES (Shorts filtered out) to videos.json,
+   which the website reads.
 
-   YouTube publishes an RSS feed for every channel at:
-     https://www.youtube.com/feeds/videos.xml?channel_id=<CHANNEL_ID>
-   It always contains the ~15 most recent uploads with title, video ID,
-   publish date, and thumbnail. That's everything the site needs.
+   TWO SOURCES, tried in order:
+     1. YouTube Data API v3  (PRIMARY) — authoritative and fresh (new
+        uploads show within a minute), and it returns each video's exact
+        duration, which is how we reliably detect and skip Shorts.
+        The API key comes from the YT_API_KEY environment variable, which
+        the GitHub Action supplies from an encrypted repo Secret. The key
+        NEVER appears in the site, in videos.json, or in the page source.
+     2. RSS feed  (FALLBACK) — used only if no API key is set or the API
+        call fails. RSS has no duration data, so Shorts can only be
+        filtered heuristically (by #shorts tags) in that mode.
 
-   No external npm packages are required — this uses only Node's built-in
-   modules, so the Action has nothing to install and runs fast.
+   The API key is read-only for PUBLIC data. It cannot log in, post,
+   delete, or read anything private — those require OAuth, not a key.
+   Worst case if leaked: someone burns your daily quota. Storing it as a
+   Secret (not in the page) avoids even that.
+
+   No external npm packages — only Node's built-in modules.
    =================================================================== */
 
 const https = require("https");
@@ -22,54 +31,52 @@ const path = require("path");
 
 // ---- CONFIG ---------------------------------------------------------
 const CHANNEL_ID = "UCbkiiNUurUSb37QyD-nYZIw"; // EmceeTV channel
-const MAX_VIDEOS = 6;                           // how many to publish
+const MAX_VIDEOS = 6;                           // how many episodes to publish
+const SHORT_MAX_SECONDS = 180;                  // <= 3 min counts as a Short
+const FETCH_POOL = 25;                          // pull extra, then filter Shorts
 const OUTPUT = path.join(__dirname, "videos.json");
+
+// The uploads playlist is the channel ID with "UC" swapped to "UU".
+const UPLOADS_PLAYLIST_ID = "UU" + CHANNEL_ID.slice(2);
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+
+// Key comes from the environment (GitHub Secret), never hardcoded.
+const YT_API_KEY = process.env.YT_API_KEY || "";
 // --------------------------------------------------------------------
 
 /**
- * Fetch a URL and resolve with the response body as a string.
- * - Follows redirects (301/302/307/308) so a moved feed still works.
- * - Sends no-cache headers so we get YouTube's current feed rather than a
- *   stale cached copy.
- *
- * NOTE: We deliberately do NOT append a cache-busting query parameter to
- * the feed URL. YouTube's RSS endpoint validates its query string and
- * returns 404 if it sees unexpected params like "&_cb=...". The no-cache
- * request headers below are the correct, supported way to avoid a stale
- * response here.
+ * GET a URL, following redirects, with no-cache headers. Resolves to the
+ * response body string.
  */
 function get(url, redirectsLeft = 5) {
   return new Promise((resolve, reject) => {
     const options = {
       headers: {
         "User-Agent": "EmceeTV-feed-bot",
-        // Ask every cache layer not to serve a stored copy.
         "Cache-Control": "no-cache, no-store, max-age=0",
         "Pragma": "no-cache",
-        "Accept": "application/atom+xml, application/xml, text/xml",
+        "Accept": "application/json, application/atom+xml, application/xml, text/xml",
       },
     };
-
     https
       .get(url, options, (res) => {
         const { statusCode, headers } = res;
-
-        // Follow redirects rather than failing on them.
         if ([301, 302, 307, 308].includes(statusCode) && headers.location) {
-          res.resume(); // discard body
-          if (redirectsLeft <= 0) {
-            return reject(new Error("Too many redirects"));
-          }
+          res.resume();
+          if (redirectsLeft <= 0) return reject(new Error("Too many redirects"));
           const next = new URL(headers.location, url).toString();
           return resolve(get(next, redirectsLeft - 1));
         }
-
         if (statusCode !== 200) {
-          res.resume();
-          return reject(new Error(`HTTP ${statusCode} from ${url}`));
+          // Capture the API's error body so failures are debuggable in logs.
+          let body = "";
+          res.setEncoding("utf8");
+          res.on("data", (c) => (body += c));
+          res.on("end", () =>
+            reject(new Error(`HTTP ${statusCode} from ${url.split("?")[0]} :: ${body.slice(0, 300)}`))
+          );
+          return;
         }
-
         let data = "";
         res.setEncoding("utf8");
         res.on("data", (chunk) => (data += chunk));
@@ -79,86 +86,195 @@ function get(url, redirectsLeft = 5) {
   });
 }
 
+/** Decode the handful of XML/HTML entities that appear in titles. */
+function decodeEntities(s = "") {
+  return s
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .trim();
+}
+
+/** Parse an ISO 8601 duration like "PT1H2M30S" into total seconds. */
+function isoDurationToSeconds(iso = "") {
+  const m = iso.match(/^P(?:(\d+)D)?T(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/);
+  if (!m) return 0;
+  const [, d, h, min, s] = m.map((x) => (x ? parseInt(x, 10) : 0));
+  return d * 86400 + h * 3600 + min * 60 + s;
+}
+
 /**
- * Parse the RSS/Atom XML with small, dependency-free regexes.
- * The feed is well-formed and predictable, so we don't need a full XML
- * library. Each <entry> maps to one video.
- *
- * IMPORTANT: YouTube's RSS feed is not guaranteed to be strictly
- * newest-first, and CDN copies can reorder entries. So we explicitly sort
- * by publish date (newest first) and de-duplicate by video ID before
- * taking the top N. This is what keeps the newest upload at the top.
+ * Heuristic Short detector for when we DON'T have duration (RSS mode) or as
+ * a secondary signal: an explicit #shorts / #short tag in the text.
  */
-function parseFeed(xml) {
-  const entries = xml.split("<entry>").slice(1); // drop the channel header
+function looksLikeShortByText(title = "", description = "") {
+  return /#shorts?\b/i.test(title) || /#shorts?\b/i.test(description);
+}
+
+/* ===================================================================
+   PRIMARY: YouTube Data API v3
+   =================================================================== */
+async function fetchViaApi() {
+  // Step 1: newest uploads (IDs + snippets) from the uploads playlist.
+  const listUrl =
+    "https://www.googleapis.com/youtube/v3/playlistItems?" +
+    new URLSearchParams({
+      part: "snippet,contentDetails",
+      maxResults: String(FETCH_POOL),
+      playlistId: UPLOADS_PLAYLIST_ID,
+      key: YT_API_KEY,
+    });
+  const listRaw = await get(listUrl);
+  const list = JSON.parse(listRaw);
+  if (!list.items || !list.items.length) throw new Error("API returned no playlist items");
+
+  // Preserve upload order; collect video IDs to look up durations.
+  const ids = list.items
+    .map((it) => it.contentDetails && it.contentDetails.videoId)
+    .filter(Boolean);
+
+  // Step 2: durations + details for those IDs (one batched call).
+  const vidUrl =
+    "https://www.googleapis.com/youtube/v3/videos?" +
+    new URLSearchParams({
+      part: "snippet,contentDetails",
+      id: ids.join(","),
+      maxResults: String(ids.length),
+      key: YT_API_KEY,
+    });
+  const vidRaw = await get(vidUrl);
+  const vids = JSON.parse(vidRaw);
+  if (!vids.items) throw new Error("API returned no video details");
+
+  // Build a lookup so we can keep newest-first order from the playlist.
+  const byId = new Map(vids.items.map((v) => [v.id, v]));
+
+  const episodes = [];
+  for (const id of ids) {
+    const v = byId.get(id);
+    if (!v) continue;
+    const sn = v.snippet || {};
+    const cd = v.contentDetails || {};
+    const seconds = isoDurationToSeconds(cd.duration || "");
+    const title = decodeEntities(sn.title || "");
+    const desc = sn.description || "";
+
+    // --- Shorts filter (automatic) ---
+    // Primary signal: duration <= 3 min. Secondary: explicit #shorts tag.
+    const isShort =
+      (seconds > 0 && seconds <= SHORT_MAX_SECONDS) ||
+      looksLikeShortByText(title, desc);
+    if (isShort) continue;
+
+    // Skip private/deleted placeholders.
+    if (!title || title === "Private video" || title === "Deleted video") continue;
+
+    const thumbs = sn.thumbnails || {};
+    const thumb =
+      (thumbs.maxres || thumbs.standard || thumbs.high || thumbs.medium || thumbs.default || {})
+        .url || `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`;
+
+    episodes.push({
+      title,
+      date: sn.publishedAt || cd.videoPublishedAt || "",
+      videoId: id,
+      thumb,
+      durationSeconds: seconds, // handy for debugging; harmless to the site
+    });
+
+    if (episodes.length >= MAX_VIDEOS) break;
+  }
+
+  if (!episodes.length) throw new Error("All API videos were filtered out as Shorts/invalid");
+  return episodes;
+}
+
+/* ===================================================================
+   FALLBACK: RSS feed (no key, no duration data)
+   =================================================================== */
+async function fetchViaRss() {
+  const xml = await get(FEED_URL);
+  const entries = xml.split("<entry>").slice(1);
   const seen = new Set();
-  const videos = [];
+  const out = [];
 
   for (const entry of entries) {
     const videoId = (entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/) || [])[1];
-    // Title may contain escaped characters; grab it raw then unescape.
-    let title = (entry.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "";
-    const published = (entry.match(/<published>(.*?)<\/published>/) || [])[1];
-
-    if (!videoId || seen.has(videoId)) continue; // skip dupes / bad entries
+    if (!videoId || seen.has(videoId)) continue;
     seen.add(videoId);
 
-    // Decode the handful of XML entities that appear in titles.
-    title = title
-      .replace(/&amp;/g, "&")
-      .replace(/&lt;/g, "<")
-      .replace(/&gt;/g, ">")
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
-      .replace(/&apos;/g, "'")
-      .trim();
+    const title = decodeEntities((entry.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "");
+    const description = (entry.match(/<media:description>([\s\S]*?)<\/media:description>/) || [])[1] || "";
+    const published = (entry.match(/<published>(.*?)<\/published>/) || [])[1] || "";
 
-    videos.push({
+    // RSS has no duration, so we can only drop obvious #shorts-tagged ones.
+    if (looksLikeShortByText(title, description)) continue;
+    if (!title) continue;
+
+    out.push({
       title,
       date: published,
       videoId,
-      // maxresdefault is the crisp 1280x720 thumbnail; the site falls back
-      // to hqdefault automatically at runtime if maxres doesn't exist yet.
       thumb: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
     });
   }
 
-  // Newest first. Entries without a valid date sort to the bottom.
-  videos.sort((a, b) => {
-    const ta = Date.parse(a.date) || 0;
-    const tb = Date.parse(b.date) || 0;
-    return tb - ta;
-  });
-
-  return videos.slice(0, MAX_VIDEOS);
+  out.sort((a, b) => (Date.parse(b.date) || 0) - (Date.parse(a.date) || 0));
+  return out.slice(0, MAX_VIDEOS);
 }
 
+/* ===================================================================
+   MAIN
+   =================================================================== */
 async function main() {
-  try {
-    console.log(`Fetching feed: ${FEED_URL}`);
-    const xml = await get(FEED_URL);
-    const videos = parseFeed(xml);
+  let videos = null;
+  let source = "";
 
-    if (!videos.length) {
-      throw new Error("Feed parsed but contained no videos");
+  // 1) Try the API first (fresh + real Shorts filtering) if a key exists.
+  if (YT_API_KEY) {
+    try {
+      console.log("Fetching via YouTube Data API…");
+      videos = await fetchViaApi();
+      source = "api";
+    } catch (err) {
+      console.warn("API fetch failed, falling back to RSS:", err.message);
     }
+  } else {
+    console.log("No YT_API_KEY set — using RSS feed (Shorts filtered by tag only).");
+  }
 
-    const payload = {
-      updated: new Date().toISOString(),
-      channelId: CHANNEL_ID,
-      videos,
-    };
+  // 2) Fall back to RSS if the API didn't produce results.
+  if (!videos) {
+    try {
+      console.log("Fetching via RSS feed…");
+      videos = await fetchViaRss();
+      source = "rss";
+    } catch (err) {
+      console.error("RSS fetch also failed:", err.message);
+    }
+  }
 
-    fs.writeFileSync(OUTPUT, JSON.stringify(payload, null, 2) + "\n");
-    console.log(`Wrote ${videos.length} videos to ${OUTPUT}`);
-    videos.forEach((v, i) => console.log(`  ${i + 1}. ${v.title}`));
-  } catch (err) {
-    // Exit non-zero so the Action logs a visible failure, but DON'T
-    // overwrite a good existing videos.json with nothing — the site keeps
-    // showing the last successful fetch (or its static fallback).
-    console.error("Feed update failed:", err.message);
+  // 3) If BOTH sources failed, exit non-zero WITHOUT overwriting a good
+  //    existing videos.json — the site keeps showing the last good data.
+  if (!videos || !videos.length) {
+    console.error("Feed update failed: no videos from any source. Keeping existing videos.json.");
     process.exit(1);
   }
+
+  const payload = {
+    updated: new Date().toISOString(),
+    source,
+    channelId: CHANNEL_ID,
+    videos,
+  };
+  fs.writeFileSync(OUTPUT, JSON.stringify(payload, null, 2) + "\n");
+  console.log(`Wrote ${videos.length} episodes to ${OUTPUT} (source: ${source})`);
+  videos.forEach((v, i) =>
+    console.log(`  ${i + 1}. ${v.title}${v.durationSeconds ? ` [${v.durationSeconds}s]` : ""}`)
+  );
 }
 
 main();
