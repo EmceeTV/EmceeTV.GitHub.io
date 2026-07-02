@@ -27,15 +27,50 @@ const OUTPUT = path.join(__dirname, "videos.json");
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 // --------------------------------------------------------------------
 
-/** Fetch a URL and resolve with the response body as a string. */
-function get(url) {
+/**
+ * Fetch a URL and resolve with the response body as a string.
+ * - Follows redirects (301/302/307/308) so a moved feed still works.
+ * - Sends no-cache headers AND a per-run cache-busting query param, so we
+ *   get YouTube's current feed rather than a stale CDN-cached copy. This
+ *   is the main fix for "stale feed" problems.
+ */
+function get(url, redirectsLeft = 5) {
   return new Promise((resolve, reject) => {
+    // Append a unique value so the CDN can't hand back a cached response.
+    const bust = (url.includes("?") ? "&" : "?") + "_cb=" + Date.now();
+    const reqUrl = url + bust;
+
+    const options = {
+      headers: {
+        "User-Agent": "EmceeTV-feed-bot",
+        // Ask every cache layer not to serve a stored copy.
+        "Cache-Control": "no-cache, no-store, max-age=0",
+        "Pragma": "no-cache",
+        "Accept": "application/atom+xml, application/xml, text/xml",
+      },
+    };
+
     https
-      .get(url, { headers: { "User-Agent": "EmceeTV-feed-bot" } }, (res) => {
-        if (res.statusCode !== 200) {
-          return reject(new Error(`HTTP ${res.statusCode} from ${url}`));
+      .get(reqUrl, options, (res) => {
+        const { statusCode, headers } = res;
+
+        // Follow redirects rather than failing on them.
+        if ([301, 302, 307, 308].includes(statusCode) && headers.location) {
+          res.resume(); // discard body
+          if (redirectsLeft <= 0) {
+            return reject(new Error("Too many redirects"));
+          }
+          const next = new URL(headers.location, url).toString();
+          return resolve(get(next, redirectsLeft - 1));
         }
+
+        if (statusCode !== 200) {
+          res.resume();
+          return reject(new Error(`HTTP ${statusCode} from ${url}`));
+        }
+
         let data = "";
+        res.setEncoding("utf8");
         res.on("data", (chunk) => (data += chunk));
         res.on("end", () => resolve(data));
       })
@@ -47,9 +82,15 @@ function get(url) {
  * Parse the RSS/Atom XML with small, dependency-free regexes.
  * The feed is well-formed and predictable, so we don't need a full XML
  * library. Each <entry> maps to one video.
+ *
+ * IMPORTANT: YouTube's RSS feed is not guaranteed to be strictly
+ * newest-first, and CDN copies can reorder entries. So we explicitly sort
+ * by publish date (newest first) and de-duplicate by video ID before
+ * taking the top N. This is what keeps the newest upload at the top.
  */
 function parseFeed(xml) {
   const entries = xml.split("<entry>").slice(1); // drop the channel header
+  const seen = new Set();
   const videos = [];
 
   for (const entry of entries) {
@@ -58,7 +99,8 @@ function parseFeed(xml) {
     let title = (entry.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || "";
     const published = (entry.match(/<published>(.*?)<\/published>/) || [])[1];
 
-    if (!videoId) continue;
+    if (!videoId || seen.has(videoId)) continue; // skip dupes / bad entries
+    seen.add(videoId);
 
     // Decode the handful of XML entities that appear in titles.
     title = title
@@ -79,6 +121,13 @@ function parseFeed(xml) {
       thumb: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
     });
   }
+
+  // Newest first. Entries without a valid date sort to the bottom.
+  videos.sort((a, b) => {
+    const ta = Date.parse(a.date) || 0;
+    const tb = Date.parse(b.date) || 0;
+    return tb - ta;
+  });
 
   return videos.slice(0, MAX_VIDEOS);
 }
