@@ -1,0 +1,64 @@
+# ===================================================================
+# Update YouTube feed — EmceeTV
+# -------------------------------------------------------------------
+# Runs on GitHub's servers a few times a day, fetches the latest videos
+# from the channel's public RSS feed, and commits videos.json if it
+# changed. The live site reads videos.json, so new uploads appear within
+# a few hours with zero manual work and no exposed API key.
+#
+# It also runs on every push (so you see it work right after setup) and
+# can be triggered by hand from the Actions tab via "Run workflow".
+# ===================================================================
+name: Update YouTube feed
+
+on:
+  schedule:
+    # Runs three times a day (every 8 hours), all times UTC.
+    # 06:00, 14:00, 22:00 UTC spreads coverage across the US morning,
+    # afternoon, and evening, so a new upload rarely waits long.
+    # Each entry is its own cron line. Add or remove lines to taste — e.g.
+    # "0 */6 * * *" would run every 6 hours (four times a day) instead.
+    # Note: GitHub schedules run in UTC and can be delayed a few minutes
+    # under load, which is normal and harmless here.
+    - cron: "0 6 * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 22 * * *"
+  push:
+    branches: [main]        # refresh on every push to main
+  workflow_dispatch: {}      # manual "Run workflow" button
+
+# Allow the Action to push the updated videos.json back to the repo.
+permissions:
+  contents: write
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch latest videos into videos.json
+        run: node fetch-videos.js
+
+      - name: Commit videos.json if it changed
+        run: |
+          # Configure the bot identity for the commit.
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Only commit when there's an actual change, so we don't create
+          # empty commits every day.
+          if git diff --quiet -- videos.json; then
+            echo "No change in videos.json — nothing to commit."
+          else
+            git add videos.json
+            git commit -m "chore: refresh YouTube feed [skip ci]"
+            git push
+            echo "videos.json updated and pushed."
+          fi
