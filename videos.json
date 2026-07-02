@@ -1,6 +1,42 @@
 {
-  "updated": "1970-01-01T00:00:00.000Z",
+  "updated": "2026-07-02T19:57:35.310Z",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
-  "_note": "Placeholder. The GitHub Action (.github/workflows/update-feed.yml) overwrites this file daily with your real latest videos. It is replaced automatically the first time the Action runs.",
-  "videos": []
+  "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 265",
+      "date": "2026-07-01T10:46:29+00:00",
+      "videoId": "je0GGi-XPzM",
+      "thumb": "https://i.ytimg.com/vi/je0GGi-XPzM/maxresdefault.jpg"
+    },
+    {
+      "title": "EmceeTV The Podcast Episode 264",
+      "date": "2026-06-24T08:20:26+00:00",
+      "videoId": "GSSJa6AkMvM",
+      "thumb": "https://i.ytimg.com/vi/GSSJa6AkMvM/maxresdefault.jpg"
+    },
+    {
+      "title": "EmceeTV The Podcast Episode 45 Kemyst",
+      "date": "2026-06-23T19:58:38+00:00",
+      "videoId": "i3YJVfFb--o",
+      "thumb": "https://i.ytimg.com/vi/i3YJVfFb--o/maxresdefault.jpg"
+    },
+    {
+      "title": "Should we bring the team Gatorade to practice?? #emceetv #gatorade #basketball #shorts",
+      "date": "2026-06-23T16:13:46+00:00",
+      "videoId": "SxswCfVObKs",
+      "thumb": "https://i.ytimg.com/vi/SxswCfVObKs/maxresdefault.jpg"
+    },
+    {
+      "title": "DZ EmceeTVs Biggest Guest & Epic West Coast Tycoon!",
+      "date": "2026-06-23T14:33:26+00:00",
+      "videoId": "kSqywsrU2GI",
+      "thumb": "https://i.ytimg.com/vi/kSqywsrU2GI/maxresdefault.jpg"
+    },
+    {
+      "title": "What’s Going on in the NBA?? #emceetv #nba #timberwolves",
+      "date": "2026-06-23T14:33:15+00:00",
+      "videoId": "SeIJ8ADjUqg",
+      "thumb": "https://i.ytimg.com/vi/SeIJ8ADjUqg/maxresdefault.jpg"
+    }
+  ]
 }
