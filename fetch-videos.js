@@ -30,16 +30,17 @@ const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_
 /**
  * Fetch a URL and resolve with the response body as a string.
  * - Follows redirects (301/302/307/308) so a moved feed still works.
- * - Sends no-cache headers AND a per-run cache-busting query param, so we
- *   get YouTube's current feed rather than a stale CDN-cached copy. This
- *   is the main fix for "stale feed" problems.
+ * - Sends no-cache headers so we get YouTube's current feed rather than a
+ *   stale cached copy.
+ *
+ * NOTE: We deliberately do NOT append a cache-busting query parameter to
+ * the feed URL. YouTube's RSS endpoint validates its query string and
+ * returns 404 if it sees unexpected params like "&_cb=...". The no-cache
+ * request headers below are the correct, supported way to avoid a stale
+ * response here.
  */
 function get(url, redirectsLeft = 5) {
   return new Promise((resolve, reject) => {
-    // Append a unique value so the CDN can't hand back a cached response.
-    const bust = (url.includes("?") ? "&" : "?") + "_cb=" + Date.now();
-    const reqUrl = url + bust;
-
     const options = {
       headers: {
         "User-Agent": "EmceeTV-feed-bot",
@@ -51,7 +52,7 @@ function get(url, redirectsLeft = 5) {
     };
 
     https
-      .get(reqUrl, options, (res) => {
+      .get(url, options, (res) => {
         const { statusCode, headers } = res;
 
         // Follow redirects rather than failing on them.
