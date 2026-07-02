@@ -1,5 +1,6 @@
 {
-  "updated": "2026-07-02T21:13:47.796Z",
+  "updated": "2026-07-02T21:36:43.965Z",
+  "source": "rss",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
     {
@@ -21,12 +22,6 @@
       "thumb": "https://i.ytimg.com/vi/i3YJVfFb--o/maxresdefault.jpg"
     },
     {
-      "title": "Should we bring the team Gatorade to practice?? #emceetv #gatorade #basketball #shorts",
-      "date": "2026-06-23T16:13:46+00:00",
-      "videoId": "SxswCfVObKs",
-      "thumb": "https://i.ytimg.com/vi/SxswCfVObKs/maxresdefault.jpg"
-    },
-    {
       "title": "DZ EmceeTVs Biggest Guest & Epic West Coast Tycoon!",
       "date": "2026-06-23T14:33:26+00:00",
       "videoId": "kSqywsrU2GI",
@@ -37,6 +32,12 @@
       "date": "2026-06-23T14:33:15+00:00",
       "videoId": "SeIJ8ADjUqg",
       "thumb": "https://i.ytimg.com/vi/SeIJ8ADjUqg/maxresdefault.jpg"
+    },
+    {
+      "title": "EmceeTV The Podcast Ep 263 The DBl Feature",
+      "date": "2026-06-17T10:32:33+00:00",
+      "videoId": "m1_TnxIxzGk",
+      "thumb": "https://i.ytimg.com/vi/m1_TnxIxzGk/maxresdefault.jpg"
     }
   ]
 }
