@@ -1,10 +1,16 @@
 # ===================================================================
 # Update YouTube feed — EmceeTV
 # -------------------------------------------------------------------
-# Runs on GitHub's servers a few times a day, fetches the latest videos
-# from the channel's public RSS feed, and commits videos.json if it
-# changed. The live site reads videos.json, so new uploads appear within
-# a few hours with zero manual work and no exposed API key.
+# Runs on GitHub's servers a few times a day. Fetches the latest videos
+# via the YouTube Data API (fresh, and filters out Shorts by duration),
+# falling back to the RSS feed if no API key is set. Commits videos.json
+# if it changed. The live site reads videos.json — no key is ever exposed
+# in the site, because the fetch runs here on GitHub's servers.
+#
+# SETUP: add your API key as a repo Secret named YT_API_KEY
+#   (Settings → Secrets and variables → Actions → New repository secret).
+# Without it, the workflow still works via RSS, but can only filter Shorts
+# that are explicitly tagged #shorts.
 #
 # It also runs on every push (so you see it work right after setup) and
 # can be triggered by hand from the Actions tab via "Run workflow".
@@ -41,9 +47,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "20"
 
       - name: Fetch latest videos into videos.json
+        env:
+          # The API key is stored as an encrypted repo Secret, injected here
+          # only for this step. It never appears in the site or videos.json.
+          # If the secret is not set, the script automatically uses RSS.
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: node fetch-videos.js
 
       - name: Commit videos.json if it changed
