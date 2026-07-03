@@ -1,8 +1,22 @@
 {
-  "updated": "2026-07-02T22:04:17.422Z",
+  "updated": "2026-07-03T09:45:35.549Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast EP 266",
+      "date": "2026-07-03T01:10:28Z",
+      "videoId": "kN2Xc8Jw7Wk",
+      "thumb": "https://i.ytimg.com/vi/kN2Xc8Jw7Wk/sddefault_live.jpg",
+      "durationSeconds": 1208
+    },
+    {
+      "title": "EmceeTV The Podcast Episode 266",
+      "date": "2026-07-03T01:07:30Z",
+      "videoId": "NHE1BRVvv0A",
+      "thumb": "https://i.ytimg.com/vi/NHE1BRVvv0A/sddefault_live.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 265",
       "date": "2026-07-01T10:46:29Z",
@@ -18,13 +32,6 @@
       "durationSeconds": 4042
     },
     {
-      "title": "EmceeTV The Podcast Episode 45 Kemyst",
-      "date": "2026-06-23T19:58:38Z",
-      "videoId": "i3YJVfFb--o",
-      "thumb": "https://i.ytimg.com/vi/i3YJVfFb--o/maxresdefault_live.jpg",
-      "durationSeconds": 0
-    },
-    {
       "title": "EmceeTV The Podcast Ep 263 The DBl Feature",
       "date": "2026-06-17T10:32:33Z",
       "videoId": "m1_TnxIxzGk",
@@ -37,13 +44,6 @@
       "videoId": "8FJtuZ_rclk",
       "thumb": "https://i.ytimg.com/vi/8FJtuZ_rclk/sddefault.jpg",
       "durationSeconds": 3840
-    },
-    {
-      "title": "DZ Talks New Music & Hip-Hop Legends on EmceeTV Ep 261",
-      "date": "2026-06-12T17:14:23Z",
-      "videoId": "SGaK3mRgP5M",
-      "thumb": "https://i.ytimg.com/vi/SGaK3mRgP5M/maxresdefault.jpg",
-      "durationSeconds": 5148
     }
   ]
 }
