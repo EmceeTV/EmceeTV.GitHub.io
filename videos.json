@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-05T11:48:49.409Z",
+  "updated": "2026-07-05T17:46:20.208Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast EP 267 Tripp Shelton",
+      "date": "2026-07-05T16:05:57Z",
+      "videoId": "XPhQl9NgfYY",
+      "thumb": "https://i.ytimg.com/vi/XPhQl9NgfYY/sddefault_live.jpg",
+      "durationSeconds": 4512
+    },
     {
       "title": "EmceeTV The Podcast EP 266",
       "date": "2026-07-03T13:37:48Z",
@@ -37,13 +44,6 @@
       "videoId": "m1_TnxIxzGk",
       "thumb": "https://i.ytimg.com/vi/m1_TnxIxzGk/sddefault.jpg",
       "durationSeconds": 3470
-    },
-    {
-      "title": "Hip-Hop , Live Music Reviews, and Major NBA Finals EmceeTV The Podcast Ep 262",
-      "date": "2026-06-15T05:42:58Z",
-      "videoId": "8FJtuZ_rclk",
-      "thumb": "https://i.ytimg.com/vi/8FJtuZ_rclk/sddefault.jpg",
-      "durationSeconds": 3840
     }
   ]
 }
