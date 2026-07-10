@@ -1,8 +1,15 @@
 {
-  "updated": "2026-07-09T19:13:51.427Z",
+  "updated": "2026-07-10T10:30:31.916Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast EP 268 DZ",
+      "date": "2026-07-10T01:45:45Z",
+      "videoId": "q6W_OSGe5MU",
+      "thumb": "https://i.ytimg.com/vi/q6W_OSGe5MU/sddefault_live.jpg",
+      "durationSeconds": 5662
+    },
     {
       "title": "EmceeTV The Podcast EP 267 Tripp Shelton",
       "date": "2026-07-06T05:36:05Z",
@@ -37,13 +44,6 @@
       "videoId": "GSSJa6AkMvM",
       "thumb": "https://i.ytimg.com/vi/GSSJa6AkMvM/sddefault.jpg",
       "durationSeconds": 4042
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 263 The DBl Feature",
-      "date": "2026-06-17T10:32:33Z",
-      "videoId": "m1_TnxIxzGk",
-      "thumb": "https://i.ytimg.com/vi/m1_TnxIxzGk/sddefault.jpg",
-      "durationSeconds": 3470
     }
   ]
 }
