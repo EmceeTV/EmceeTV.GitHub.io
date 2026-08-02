@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-02T15:08:30.091Z",
+  "updated": "2026-08-02T22:51:35.159Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
     {
-      "title": "EmceeTV The Podcast EP 272",
+      "title": "EmceeTV The Podcast EP 273 The Sunday Show",
+      "date": "2026-08-02T16:16:37Z",
+      "videoId": "NAnC-3YOTvA",
+      "thumb": "https://i.ytimg.com/vi/NAnC-3YOTvA/sddefault_live.jpg",
+      "durationSeconds": 3578
+    },
+    {
+      "title": "EmceeTV The Podcast EP 272 DJ Killa Beats",
       "date": "2026-07-31T10:58:36Z",
       "videoId": "hWXztOB9RQM",
       "thumb": "https://i.ytimg.com/vi/hWXztOB9RQM/sddefault.jpg",
@@ -32,18 +39,11 @@
       "durationSeconds": 1922
     },
     {
-      "title": "EmceeTV The Podcast EP 268 DZ",
+      "title": "EmceeTV The Podcast EP 268 | Special Guest: Hip-Hop Legend DZ & Hosts Wilson & Bigg Ray West",
       "date": "2026-07-10T15:43:59Z",
       "videoId": "q6W_OSGe5MU",
       "thumb": "https://i.ytimg.com/vi/q6W_OSGe5MU/sddefault.jpg",
       "durationSeconds": 5659
-    },
-    {
-      "title": "EmceeTV The Podcast EP 267 Tripp Shelton",
-      "date": "2026-07-06T05:36:05Z",
-      "videoId": "XPhQl9NgfYY",
-      "thumb": "https://i.ytimg.com/vi/XPhQl9NgfYY/sddefault.jpg",
-      "durationSeconds": 4511
     }
   ]
 }
