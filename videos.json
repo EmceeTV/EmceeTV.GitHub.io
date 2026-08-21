@@ -1,8 +1,15 @@
 {
-  "updated": "2026-08-20T22:21:22.503Z",
+  "updated": "2026-08-21T06:49:24.650Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 276 Showtyme and Frank James",
+      "date": "2026-08-20T23:31:24Z",
+      "videoId": "i5z5R6cEbuw",
+      "thumb": "https://i.ytimg.com/vi/i5z5R6cEbuw/sddefault_live.jpg",
+      "durationSeconds": 3551
+    },
     {
       "title": "EmceeTV The Podcast Ep 275 Apache",
       "date": "2026-08-19T13:30:13Z",
@@ -37,13 +44,6 @@
       "videoId": "Di9d5rTLz_8",
       "thumb": "https://i.ytimg.com/vi/Di9d5rTLz_8/sddefault.jpg",
       "durationSeconds": 4404
-    },
-    {
-      "title": "EmceeTV The Podcast EP 270",
-      "date": "2026-07-15T10:21:24Z",
-      "videoId": "aniax_d9TiY",
-      "thumb": "https://i.ytimg.com/vi/aniax_d9TiY/sddefault.jpg",
-      "durationSeconds": 2622
     }
   ]
 }
