@@ -1,14 +1,21 @@
 {
-  "updated": "2026-08-25T22:20:50.662Z",
+  "updated": "2026-08-26T06:51:40.242Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
     {
+      "title": "EmceeTV The Podcast Ep 278 Duke Altman",
+      "date": "2026-08-25T23:44:16Z",
+      "videoId": "0rIBgJLQWCw",
+      "thumb": "https://i.ytimg.com/vi/0rIBgJLQWCw/sddefault_live.jpg",
+      "durationSeconds": 3581
+    },
+    {
       "title": "EmceeTV The Podcast Ep 277",
-      "date": "2026-08-25T21:31:52Z",
+      "date": "2026-08-25T22:29:41Z",
       "videoId": "zbX8pQp4ChU",
-      "thumb": "https://i.ytimg.com/vi/zbX8pQp4ChU/sddefault_live.jpg",
-      "durationSeconds": 0
+      "thumb": "https://i.ytimg.com/vi/zbX8pQp4ChU/sddefault.jpg",
+      "durationSeconds": 3168
     },
     {
       "title": "EmceeTV The Podcast Ep 276 Showtyme and Frank James",
@@ -37,13 +44,6 @@
       "videoId": "NAnC-3YOTvA",
       "thumb": "https://i.ytimg.com/vi/NAnC-3YOTvA/sddefault.jpg",
       "durationSeconds": 3573
-    },
-    {
-      "title": "EmceeTV The Podcast EP 272 DJ Killa Beat",
-      "date": "2026-07-31T10:58:36Z",
-      "videoId": "hWXztOB9RQM",
-      "thumb": "https://i.ytimg.com/vi/hWXztOB9RQM/sddefault.jpg",
-      "durationSeconds": 4124
     }
   ]
 }
