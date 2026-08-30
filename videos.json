@@ -1,10 +1,17 @@
 {
-  "updated": "2026-08-30T11:27:01.718Z",
+  "updated": "2026-08-30T18:00:51.174Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
     {
-      "title": "EmceeTV The Podcast Ep 278 Duke Altman",
+      "title": "EmceeTV The Podcast Ep 279 Sunday Sunday Sunday",
+      "date": "2026-08-30T16:30:09Z",
+      "videoId": "YIK_Ts1h-mM",
+      "thumb": "https://i.ytimg.com/vi/YIK_Ts1h-mM/sddefault_live.jpg",
+      "durationSeconds": 3395
+    },
+    {
+      "title": "EmceeTV The Podcast Ep 278: Duke Altman on Montana Hip-Hop, Rapping The Rivers & His Music Journey",
       "date": "2026-08-26T13:49:35Z",
       "videoId": "0rIBgJLQWCw",
       "thumb": "https://i.ytimg.com/vi/0rIBgJLQWCw/sddefault.jpg",
@@ -37,13 +44,6 @@
       "videoId": "n4tZ1BP-A2M",
       "thumb": "https://i.ytimg.com/vi/n4tZ1BP-A2M/sddefault.jpg",
       "durationSeconds": 3172
-    },
-    {
-      "title": "EmceeTV The Podcast EP 273 The Sunday Show",
-      "date": "2026-08-03T05:37:25Z",
-      "videoId": "NAnC-3YOTvA",
-      "thumb": "https://i.ytimg.com/vi/NAnC-3YOTvA/sddefault.jpg",
-      "durationSeconds": 3573
     }
   ]
 }
