@@ -1,21 +1,21 @@
 {
-  "updated": "2026-09-01T23:44:22.018Z",
+  "updated": "2026-09-02T10:49:38.032Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 280 Filth and Foul",
+      "date": "2026-09-02T07:25:48Z",
+      "videoId": "w5sVhPIsj44",
+      "thumb": "https://i.ytimg.com/vi/w5sVhPIsj44/sddefault.jpg",
+      "durationSeconds": 3787
+    },
     {
       "title": "EmceeTV The Podcast Ep 281 Strawstone",
       "date": "2026-09-01T22:14:04Z",
       "videoId": "J-JdPzXivF4",
       "thumb": "https://i.ytimg.com/vi/J-JdPzXivF4/sddefault_live.jpg",
       "durationSeconds": 4011
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 280 Filth and Foul",
-      "date": "2026-09-01T18:14:12Z",
-      "videoId": "w5sVhPIsj44",
-      "thumb": "https://i.ytimg.com/vi/w5sVhPIsj44/sddefault_live.jpg",
-      "durationSeconds": 3793
     },
     {
       "title": "EmceeTV The Podcast Ep 279 Sunday Sunday Sunday",
