@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-03T17:46:10.926Z",
+  "updated": "2026-09-03T23:44:51.144Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 282 Surreal",
+      "date": "2026-09-03T21:02:24Z",
+      "videoId": "qeKNiZ7tOTs",
+      "thumb": "https://i.ytimg.com/vi/qeKNiZ7tOTs/sddefault_live.jpg",
+      "durationSeconds": 5623
+    },
     {
       "title": "EmceeTV The Podcast Ep 281 Strawstone",
       "date": "2026-09-02T11:34:27Z",
@@ -37,13 +44,6 @@
       "videoId": "zbX8pQp4ChU",
       "thumb": "https://i.ytimg.com/vi/zbX8pQp4ChU/sddefault.jpg",
       "durationSeconds": 3168
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 276 Showtyme and Frank James",
-      "date": "2026-08-21T13:02:35Z",
-      "videoId": "i5z5R6cEbuw",
-      "thumb": "https://i.ytimg.com/vi/i5z5R6cEbuw/sddefault.jpg",
-      "durationSeconds": 3546
     }
   ]
 }
