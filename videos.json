@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-06T10:27:30.652Z",
+  "updated": "2026-09-06T16:51:16.142Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 283",
+      "date": "2026-09-06T16:10:35Z",
+      "videoId": "pyjIiJ_ZBvg",
+      "thumb": "https://i.ytimg.com/vi/pyjIiJ_ZBvg/sddefault_live.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 282 Surreal",
       "date": "2026-09-04T10:53:47Z",
@@ -37,13 +44,6 @@
       "videoId": "0rIBgJLQWCw",
       "thumb": "https://i.ytimg.com/vi/0rIBgJLQWCw/sddefault.jpg",
       "durationSeconds": 3577
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 277",
-      "date": "2026-08-25T22:29:41Z",
-      "videoId": "zbX8pQp4ChU",
-      "thumb": "https://i.ytimg.com/vi/zbX8pQp4ChU/sddefault.jpg",
-      "durationSeconds": 3168
     }
   ]
 }
