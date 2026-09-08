@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-08T10:47:18.693Z",
+  "updated": "2026-09-08T17:51:56.192Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 284 Meiday",
+      "date": "2026-09-08T17:42:55Z",
+      "videoId": "DHO1QDMiFWY",
+      "thumb": "https://i.ytimg.com/vi/DHO1QDMiFWY/sddefault_live.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "Legends - Dame Dash -  Lloyd Banks - EmceeTV The Podcast Ep 283",
       "date": "2026-09-06T17:45:16Z",
@@ -37,13 +44,6 @@
       "videoId": "YIK_Ts1h-mM",
       "thumb": "https://i.ytimg.com/vi/YIK_Ts1h-mM/sddefault.jpg",
       "durationSeconds": 3391
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 278: Duke Altman on Montana Hip-Hop, Rapping The Rivers & His Music Journey",
-      "date": "2026-08-26T13:49:35Z",
-      "videoId": "0rIBgJLQWCw",
-      "thumb": "https://i.ytimg.com/vi/0rIBgJLQWCw/sddefault.jpg",
-      "durationSeconds": 3577
     }
   ]
 }
