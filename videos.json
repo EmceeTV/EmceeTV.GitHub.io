@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-10T17:37:51.943Z",
+  "updated": "2026-09-10T23:38:32.288Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 285 Two Days Until The Weekend",
+      "date": "2026-09-10T22:46:46Z",
+      "videoId": "oYv6el91asw",
+      "thumb": "https://i.ytimg.com/vi/oYv6el91asw/sddefault.jpg",
+      "durationSeconds": 4561
+    },
     {
       "title": "EmceeTV The Podcast Ep 284 Meiday",
       "date": "2026-09-08T18:44:09Z",
@@ -37,13 +44,6 @@
       "videoId": "w5sVhPIsj44",
       "thumb": "https://i.ytimg.com/vi/w5sVhPIsj44/sddefault.jpg",
       "durationSeconds": 3787
-    },
-    {
-      "title": "Joe Budden, Lefty Gunplay, Rod Wave vs Boosie | EmceeTV The Podcast Ep 279",
-      "date": "2026-08-31T05:34:25Z",
-      "videoId": "YIK_Ts1h-mM",
-      "thumb": "https://i.ytimg.com/vi/YIK_Ts1h-mM/sddefault.jpg",
-      "durationSeconds": 3391
     }
   ]
 }
