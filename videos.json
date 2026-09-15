@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-15T18:05:30.145Z",
+  "updated": "2026-09-15T23:55:18.787Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 286 Eminem",
+      "date": "2026-09-15T21:29:16Z",
+      "videoId": "9vE-jCVhiHY",
+      "thumb": "https://i.ytimg.com/vi/9vE-jCVhiHY/sddefault_live.jpg",
+      "durationSeconds": 3665
+    },
     {
       "title": "EmceeTV The Podcast Ep 285 Two Days Until The Weekend",
       "date": "2026-09-10T22:46:46Z",
@@ -37,13 +44,6 @@
       "videoId": "J-JdPzXivF4",
       "thumb": "https://i.ytimg.com/vi/J-JdPzXivF4/sddefault.jpg",
       "durationSeconds": 4005
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 280 Filth and Foul",
-      "date": "2026-09-02T07:25:48Z",
-      "videoId": "w5sVhPIsj44",
-      "thumb": "https://i.ytimg.com/vi/w5sVhPIsj44/sddefault.jpg",
-      "durationSeconds": 3787
     }
   ]
 }
