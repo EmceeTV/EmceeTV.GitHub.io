@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-17T18:06:48.371Z",
+  "updated": "2026-09-17T23:51:21.257Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 287 Tino Ali LIVE",
+      "date": "2026-09-17T23:26:25Z",
+      "videoId": "yDJwyRzHoLM",
+      "thumb": "https://i.ytimg.com/vi/yDJwyRzHoLM/sddefault.jpg",
+      "durationSeconds": 5631
+    },
     {
       "title": "EmceeTV The Podcast Ep 286 Eminem",
       "date": "2026-09-16T10:44:54Z",
@@ -37,13 +44,6 @@
       "videoId": "qeKNiZ7tOTs",
       "thumb": "https://i.ytimg.com/vi/qeKNiZ7tOTs/sddefault.jpg",
       "durationSeconds": 5622
-    },
-    {
-      "title": "Booking Shows, Tour Nightmares & King ISO w/ Justin Strawstone | EmceeTV The Podcast Ep 281",
-      "date": "2026-09-02T11:34:27Z",
-      "videoId": "J-JdPzXivF4",
-      "thumb": "https://i.ytimg.com/vi/J-JdPzXivF4/sddefault.jpg",
-      "durationSeconds": 4005
     }
   ]
 }
