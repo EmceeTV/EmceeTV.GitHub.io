@@ -1,8 +1,15 @@
 {
-  "updated": "2026-09-20T10:49:33.256Z",
+  "updated": "2026-09-20T17:22:54.218Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 288 Marq Divine",
+      "date": "2026-09-20T16:16:05Z",
+      "videoId": "rY4BvrSVnB0",
+      "thumb": "https://i.ytimg.com/vi/rY4BvrSVnB0/sddefault_live.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 287 Tino Ali LIVE",
       "date": "2026-09-17T23:26:25Z",
@@ -37,13 +44,6 @@
       "videoId": "pyjIiJ_ZBvg",
       "thumb": "https://i.ytimg.com/vi/pyjIiJ_ZBvg/sddefault.jpg",
       "durationSeconds": 5376
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 282 Surreal",
-      "date": "2026-09-04T10:53:47Z",
-      "videoId": "qeKNiZ7tOTs",
-      "thumb": "https://i.ytimg.com/vi/qeKNiZ7tOTs/sddefault.jpg",
-      "durationSeconds": 5622
     }
   ]
 }
