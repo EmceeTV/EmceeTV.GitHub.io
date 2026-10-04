@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-04T11:54:30.118Z",
+  "updated": "2026-10-04T18:04:28.010Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 289 Sundays with Tino",
+      "date": "2026-10-04T15:54:36Z",
+      "videoId": "wBFX82PJ78k",
+      "thumb": "https://i.ytimg.com/vi/wBFX82PJ78k/maxresdefault_live.jpg",
+      "durationSeconds": 3908
+    },
     {
       "title": "🔥 EmceeTV The Podcast | Ep. 288: Marq Divine Live in Studio! 🚨",
       "date": "2026-09-20T18:02:07Z",
@@ -37,13 +44,6 @@
       "videoId": "DHO1QDMiFWY",
       "thumb": "https://i.ytimg.com/vi/DHO1QDMiFWY/sddefault.jpg",
       "durationSeconds": 3418
-    },
-    {
-      "title": "Legends - Dame Dash -  Lloyd Banks - EmceeTV The Podcast Ep 283",
-      "date": "2026-09-06T17:45:16Z",
-      "videoId": "pyjIiJ_ZBvg",
-      "thumb": "https://i.ytimg.com/vi/pyjIiJ_ZBvg/sddefault.jpg",
-      "durationSeconds": 5376
     }
   ]
 }
