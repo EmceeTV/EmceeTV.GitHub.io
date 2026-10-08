@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-08T12:58:17.154Z",
+  "updated": "2026-10-08T19:47:05.941Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 290 Thursday and Stuff",
+      "date": "2026-10-08T19:19:07Z",
+      "videoId": "bItCPeD-4hA",
+      "thumb": "https://i.ytimg.com/vi/bItCPeD-4hA/sddefault.jpg",
+      "durationSeconds": 3430
+    },
     {
       "title": "EmceeTV The Podcast Ep 289 Sundays with Tino",
       "date": "2026-10-05T05:16:58Z",
@@ -37,13 +44,6 @@
       "videoId": "oYv6el91asw",
       "thumb": "https://i.ytimg.com/vi/oYv6el91asw/sddefault.jpg",
       "durationSeconds": 4561
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 284 Meiday",
-      "date": "2026-09-08T18:44:09Z",
-      "videoId": "DHO1QDMiFWY",
-      "thumb": "https://i.ytimg.com/vi/DHO1QDMiFWY/sddefault.jpg",
-      "durationSeconds": 3418
     }
   ]
 }
