@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-11T12:16:29.468Z",
+  "updated": "2026-10-11T18:44:50.710Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 300 Unboxing on Sunday",
+      "date": "2026-10-11T17:33:43Z",
+      "videoId": "zMCQKx8G2vg",
+      "thumb": "https://i.ytimg.com/vi/zMCQKx8G2vg/sddefault.jpg",
+      "durationSeconds": 615
+    },
     {
       "title": "EmceeTV The Podcast Ep 290 Thursday and Stuff",
       "date": "2026-10-08T19:19:07Z",
@@ -37,13 +44,6 @@
       "videoId": "9vE-jCVhiHY",
       "thumb": "https://i.ytimg.com/vi/9vE-jCVhiHY/sddefault.jpg",
       "durationSeconds": 3656
-    },
-    {
-      "title": "🔥 EmceeTV The Podcast | Ep. 285: Two Days Until The Weekend! 🚨",
-      "date": "2026-09-10T22:46:46Z",
-      "videoId": "oYv6el91asw",
-      "thumb": "https://i.ytimg.com/vi/oYv6el91asw/sddefault.jpg",
-      "durationSeconds": 4561
     }
   ]
 }
