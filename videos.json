@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-21T11:19:59.732Z",
+  "updated": "2026-10-21T18:31:28.746Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 293 Untitled",
+      "date": "2026-10-21T16:29:18Z",
+      "videoId": "GdOUoR-4-ZQ",
+      "thumb": "https://i.ytimg.com/vi/GdOUoR-4-ZQ/maxresdefault_live.jpg",
+      "durationSeconds": 3452
+    },
     {
       "title": "EmceeTV The Podcast Ep 292 The Sunday Show",
       "date": "2026-10-19T05:08:22Z",
@@ -37,13 +44,6 @@
       "videoId": "wBFX82PJ78k",
       "thumb": "https://i.ytimg.com/vi/wBFX82PJ78k/maxresdefault.jpg",
       "durationSeconds": 3900
-    },
-    {
-      "title": "🔥 EmceeTV The Podcast | Ep. 288: Marq Divine Live in Studio! 🚨",
-      "date": "2026-09-20T18:02:07Z",
-      "videoId": "rY4BvrSVnB0",
-      "thumb": "https://i.ytimg.com/vi/rY4BvrSVnB0/sddefault.jpg",
-      "durationSeconds": 5721
     }
   ]
 }
