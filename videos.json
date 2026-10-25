@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-25T10:54:54.149Z",
+  "updated": "2026-10-25T17:33:07.173Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 295 The Sunday Show",
+      "date": "2026-10-25T15:30:51Z",
+      "videoId": "hyIF35TDz-8",
+      "thumb": "https://i.ytimg.com/vi/hyIF35TDz-8/maxresdefault.jpg?v=6ade20ad",
+      "durationSeconds": 4208
+    },
     {
       "title": "EmceeTV Ep. 294: Rashaad Lee on Independent Rap, Authentic Sound & The Grind",
       "date": "2026-10-23T10:07:58Z",
@@ -37,13 +44,6 @@
       "videoId": "zMCQKx8G2vg",
       "thumb": "https://i.ytimg.com/vi/zMCQKx8G2vg/maxresdefault.jpg",
       "durationSeconds": 615
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 290 Thursday and Stuff",
-      "date": "2026-10-08T19:19:07Z",
-      "videoId": "bItCPeD-4hA",
-      "thumb": "https://i.ytimg.com/vi/bItCPeD-4hA/sddefault.jpg",
-      "durationSeconds": 3430
     }
   ]
 }
