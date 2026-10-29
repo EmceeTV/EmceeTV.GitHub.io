@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-29T12:27:07.099Z",
+  "updated": "2026-10-29T19:29:25.104Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 296 Coldsaint",
+      "date": "2026-10-29T17:08:33Z",
+      "videoId": "yDQb6n24zJw",
+      "thumb": "https://i.ytimg.com/vi/yDQb6n24zJw/maxresdefault.jpg?v=6ae37d93",
+      "durationSeconds": 3460
+    },
     {
       "title": "EmceeTV The Podcast Ep 295 The Sunday Show",
       "date": "2026-10-26T04:55:48Z",
@@ -37,13 +44,6 @@
       "videoId": "qgGV9-12jZY",
       "thumb": "https://i.ytimg.com/vi/qgGV9-12jZY/maxresdefault.jpg",
       "durationSeconds": 3362
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 300 Unboxing on Sunday",
-      "date": "2026-10-11T17:33:43Z",
-      "videoId": "zMCQKx8G2vg",
-      "thumb": "https://i.ytimg.com/vi/zMCQKx8G2vg/maxresdefault.jpg",
-      "durationSeconds": 615
     }
   ]
 }
