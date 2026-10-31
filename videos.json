@@ -1,8 +1,15 @@
 {
-  "updated": "2026-10-30T19:06:54.816Z",
+  "updated": "2026-10-31T01:22:59.701Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "RJ Wilson Podcast 297",
+      "date": "2026-10-30T19:41:58Z",
+      "videoId": "SI-mmjn7UeE",
+      "thumb": "https://i.ytimg.com/vi/SI-mmjn7UeE/maxresdefault.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 296 Coldsaint",
       "date": "2026-10-30T06:18:49Z",
@@ -37,13 +44,6 @@
       "videoId": "UEIfWlxsdUc",
       "thumb": "https://i.ytimg.com/vi/UEIfWlxsdUc/maxresdefault.jpg",
       "durationSeconds": 4607
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 291 Aint Nuthing But a Tuesday",
-      "date": "2026-10-14T10:28:00Z",
-      "videoId": "qgGV9-12jZY",
-      "thumb": "https://i.ytimg.com/vi/qgGV9-12jZY/maxresdefault.jpg",
-      "durationSeconds": 3362
     }
   ]
 }
