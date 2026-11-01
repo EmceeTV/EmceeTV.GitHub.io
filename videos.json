@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-01T12:49:10.610Z",
+  "updated": "2026-11-01T18:50:38.225Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 298 Snub Knows",
+      "date": "2026-11-01T16:43:38Z",
+      "videoId": "g_P5Hm3XOdc",
+      "thumb": "https://i.ytimg.com/vi/g_P5Hm3XOdc/sddefault.jpg?v=6ae76c3e",
+      "durationSeconds": 4161
+    },
     {
       "title": "EmceeTV The Podcast Ep 297",
       "date": "2026-11-01T07:30:47Z",
@@ -37,13 +44,6 @@
       "videoId": "6HVdkni6lj4",
       "thumb": "https://i.ytimg.com/vi/6HVdkni6lj4/maxresdefault.jpg",
       "durationSeconds": 3328
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 293 Untitled",
-      "date": "2026-10-22T05:33:06Z",
-      "videoId": "GdOUoR-4-ZQ",
-      "thumb": "https://i.ytimg.com/vi/GdOUoR-4-ZQ/maxresdefault.jpg",
-      "durationSeconds": 3450
     }
   ]
 }
