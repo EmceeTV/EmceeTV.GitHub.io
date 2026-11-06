@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-05T20:58:54.346Z",
+  "updated": "2026-11-06T01:57:32.830Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 301",
+      "date": "2026-11-05T22:27:33Z",
+      "videoId": "pTErqjSLjfg",
+      "thumb": "https://i.ytimg.com/vi/pTErqjSLjfg/sddefault.jpg?v=6aed02d7",
+      "durationSeconds": 3759
+    },
     {
       "title": "EmceeTV The Podcast EP 297 ArJye Collier",
       "date": "2026-11-02T21:00:08Z",
@@ -37,13 +44,6 @@
       "videoId": "hyIF35TDz-8",
       "thumb": "https://i.ytimg.com/vi/hyIF35TDz-8/maxresdefault.jpg",
       "durationSeconds": 4206
-    },
-    {
-      "title": "EmceeTV Ep. 294: Rashaad Lee on Independent Rap, Authentic Sound & The Grind",
-      "date": "2026-10-23T10:07:58Z",
-      "videoId": "6HVdkni6lj4",
-      "thumb": "https://i.ytimg.com/vi/6HVdkni6lj4/maxresdefault.jpg",
-      "durationSeconds": 3328
     }
   ]
 }
