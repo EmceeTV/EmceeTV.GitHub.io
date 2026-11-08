@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-08T12:54:04.578Z",
+  "updated": "2026-11-08T18:44:47.862Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 302 Nobody Playing But YOU Smokey",
+      "date": "2026-11-08T17:00:47Z",
+      "videoId": "icOat1L_ZdE",
+      "thumb": "https://i.ytimg.com/vi/icOat1L_ZdE/maxresdefault.jpg?v=6af0aac1",
+      "durationSeconds": 2512
+    },
     {
       "title": "EmceeTV The Podcast Ep 301",
       "date": "2026-11-06T14:31:58Z",
@@ -37,13 +44,6 @@
       "videoId": "yDQb6n24zJw",
       "thumb": "https://i.ytimg.com/vi/yDQb6n24zJw/maxresdefault.jpg",
       "durationSeconds": 3454
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 295 The Sunday Show",
-      "date": "2026-10-26T04:55:48Z",
-      "videoId": "hyIF35TDz-8",
-      "thumb": "https://i.ytimg.com/vi/hyIF35TDz-8/maxresdefault.jpg",
-      "durationSeconds": 4206
     }
   ]
 }
