@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-10T20:45:13.189Z",
+  "updated": "2026-11-11T01:40:26.831Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 303 Julixn and YungVision",
+      "date": "2026-11-10T22:13:42Z",
+      "videoId": "CfPRIWyRe5U",
+      "thumb": "https://i.ytimg.com/vi/CfPRIWyRe5U/maxresdefault.jpg?v=6af39718",
+      "durationSeconds": 3554
+    },
     {
       "title": "EmceeTV The Podcast Ep 302 Nobody Playing But YOU Smokey",
       "date": "2026-11-09T05:59:47Z",
@@ -37,13 +44,6 @@
       "videoId": "ZTv9Eq6mjaE",
       "thumb": "https://i.ytimg.com/vi/ZTv9Eq6mjaE/sddefault.jpg",
       "durationSeconds": 4547
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 296 Coldsaint",
-      "date": "2026-10-30T06:18:49Z",
-      "videoId": "yDQb6n24zJw",
-      "thumb": "https://i.ytimg.com/vi/yDQb6n24zJw/maxresdefault.jpg",
-      "durationSeconds": 3454
     }
   ]
 }
