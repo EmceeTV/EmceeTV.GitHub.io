@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-12T14:46:25.779Z",
+  "updated": "2026-11-12T21:23:40.920Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 304 Tino and Smoov G",
+      "date": "2026-11-12T21:20:49Z",
+      "videoId": "9_mbPxJHpQM",
+      "thumb": "https://i.ytimg.com/vi/9_mbPxJHpQM/maxresdefault.jpg?v=6af62db4",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 303 Julixn and YungVision",
       "date": "2026-11-11T11:44:54Z",
@@ -37,13 +44,6 @@
       "videoId": "g_P5Hm3XOdc",
       "thumb": "https://i.ytimg.com/vi/g_P5Hm3XOdc/sddefault.jpg",
       "durationSeconds": 4156
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 297",
-      "date": "2026-11-01T07:30:47Z",
-      "videoId": "ZTv9Eq6mjaE",
-      "thumb": "https://i.ytimg.com/vi/ZTv9Eq6mjaE/sddefault.jpg",
-      "durationSeconds": 4547
     }
   ]
 }
