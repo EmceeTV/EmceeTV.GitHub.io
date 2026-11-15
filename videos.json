@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-15T13:35:51.168Z",
+  "updated": "2026-11-15T19:40:24.071Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 305",
+      "date": "2026-11-15T17:19:48Z",
+      "videoId": "rZhNwRRYxpM",
+      "thumb": "https://i.ytimg.com/vi/rZhNwRRYxpM/maxresdefault.jpg?v=6af9e9b6",
+      "durationSeconds": 3668
+    },
     {
       "title": "EmceeTV The Podcast Ep 304 Tino and Smoov G",
       "date": "2026-11-13T11:18:49Z",
@@ -37,13 +44,6 @@
       "videoId": "SI-mmjn7UeE",
       "thumb": "https://i.ytimg.com/vi/SI-mmjn7UeE/maxresdefault.jpg",
       "durationSeconds": 2388
-    },
-    {
-      "title": "🎙️ EmceeTV The Podcast | Ep. 298: Snubb Knows & Bigg Ray West",
-      "date": "2026-11-02T06:09:45Z",
-      "videoId": "g_P5Hm3XOdc",
-      "thumb": "https://i.ytimg.com/vi/g_P5Hm3XOdc/sddefault.jpg",
-      "durationSeconds": 4156
     }
   ]
 }
