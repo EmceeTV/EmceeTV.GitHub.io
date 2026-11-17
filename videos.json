@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-17T15:38:13.052Z",
+  "updated": "2026-11-17T22:09:08.159Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 306",
+      "date": "2026-11-17T22:00:07Z",
+      "videoId": "tyJJLb6eC2c",
+      "thumb": "https://i.ytimg.com/vi/tyJJLb6eC2c/maxresdefault.jpg?v=6afcce6b",
+      "durationSeconds": 0
+    },
     {
       "title": "EmceeTV The Podcast Ep 305",
       "date": "2026-11-16T06:26:18Z",
@@ -37,13 +44,6 @@
       "videoId": "pTErqjSLjfg",
       "thumb": "https://i.ytimg.com/vi/pTErqjSLjfg/sddefault.jpg",
       "durationSeconds": 3753
-    },
-    {
-      "title": "EmceeTV The Podcast EP 297 ArJye Collier",
-      "date": "2026-11-02T21:00:08Z",
-      "videoId": "SI-mmjn7UeE",
-      "thumb": "https://i.ytimg.com/vi/SI-mmjn7UeE/maxresdefault.jpg",
-      "durationSeconds": 2388
     }
   ]
 }
