@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-22T14:13:24.503Z",
+  "updated": "2026-11-22T20:38:31.402Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "EmceeTV The Podcast Ep 307",
+      "date": "2026-11-22T16:58:35Z",
+      "videoId": "f-hApyr5v4E",
+      "thumb": "https://i.ytimg.com/vi/f-hApyr5v4E/maxresdefault.jpg?v=6b031f42",
+      "durationSeconds": 3660
+    },
     {
       "title": "EmceeTV The Podcast Ep 306",
       "date": "2026-11-18T11:22:49Z",
@@ -37,13 +44,6 @@
       "videoId": "icOat1L_ZdE",
       "thumb": "https://i.ytimg.com/vi/icOat1L_ZdE/maxresdefault.jpg",
       "durationSeconds": 2513
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 301",
-      "date": "2026-11-06T14:31:58Z",
-      "videoId": "pTErqjSLjfg",
-      "thumb": "https://i.ytimg.com/vi/pTErqjSLjfg/sddefault.jpg",
-      "durationSeconds": 3753
     }
   ]
 }
