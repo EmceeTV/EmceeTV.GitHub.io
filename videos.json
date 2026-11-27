@@ -1,8 +1,15 @@
 {
-  "updated": "2026-11-27T03:54:26.694Z",
+  "updated": "2026-11-27T16:17:58.413Z",
   "source": "api",
   "channelId": "UCbkiiNUurUSb37QyD-nYZIw",
   "videos": [
+    {
+      "title": "Stevie Stone Opens Up About Ahdasee Records, New Artists & \"Goat Talk\" | EmceeTV The Podcast Ep. 309",
+      "date": "2026-11-27T07:11:54Z",
+      "videoId": "h7i3RSV5lvw",
+      "thumb": "https://i.ytimg.com/vi/h7i3RSV5lvw/maxresdefault.jpg",
+      "durationSeconds": 0
+    },
     {
       "title": "The Griselda & Mass Appeal Unboxing - EmceeTV The Podcast Ep 308",
       "date": "2026-11-24T23:30:24Z",
@@ -37,13 +44,6 @@
       "videoId": "9_mbPxJHpQM",
       "thumb": "https://i.ytimg.com/vi/9_mbPxJHpQM/maxresdefault.jpg",
       "durationSeconds": 5162
-    },
-    {
-      "title": "EmceeTV The Podcast Ep 303 Julixn and YungVision",
-      "date": "2026-11-11T11:44:54Z",
-      "videoId": "CfPRIWyRe5U",
-      "thumb": "https://i.ytimg.com/vi/CfPRIWyRe5U/maxresdefault.jpg",
-      "durationSeconds": 3545
     }
   ]
 }
